@@ -41,7 +41,7 @@
   function Dog(options){
     if(options !== undefined){
       this.color = options.color || 'black'; // set to black if undefined
-      this.hungry = options.hungry || true; // set to true if undefined
+      this.hungry = (options.hungry === false) ? false : true;
       this.status = options.status || 'normal';
     }
   }
@@ -54,11 +54,15 @@
 
   Human.prototype.pet = function(petted){
     // console.log('is petting....');
+
+    // set the status property to 'petted' to happy
     petted.status = 'happy';
   };
 
   Human.prototype.feed = function(fed){
-    console.log('feeding....');
+    // console.log('feeding....');
+
+    // set the hungry property of 'fed' to false.
     fed.hungry = false;
   };
 
@@ -81,7 +85,7 @@
 
   var atticus = new Dog();
 
-
+  console.log(kepler.hungry);
   //     __
   //    / /_  __  ______ ___  ____ _____  _____
   //   / __ \/ / / / __ `__ \/ __ `/ __ \/ ___/
