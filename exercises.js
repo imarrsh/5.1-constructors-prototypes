@@ -38,7 +38,29 @@
   //
   // Only add code to *THIS* section!
 
+  function Dog(options){
+    if(options !== undefined){
+      this.color = options.color || 'black'; // set to black if undefined
+      this.hungry = options.hungry || true; // set to true if undefined
+      this.status = options.status || 'normal';
+    }
+  }
 
+  function Human(options){
+    if(options !== undefined){
+      this.cool = options.cool || false;
+    }
+  }
+
+  Human.prototype.pet = function(petted){
+    // console.log('is petting....');
+    petted.status = 'happy';
+  };
+
+  Human.prototype.feed = function(fed){
+    console.log('feeding....');
+    fed.hungry = false;
+  };
 
 
   //        __
