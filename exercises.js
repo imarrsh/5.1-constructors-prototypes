@@ -66,6 +66,11 @@
     fed.hungry = false;
   };
 
+  // set the cool prop to false for all humans by default
+  // not sure that this is the right way, but it works since
+  // dan is initialized without passing any options
+  Human.prototype.cool = false;
+
 
   //        __
   //   ____/ /___  ____ ______
@@ -85,7 +90,6 @@
 
   var atticus = new Dog();
 
-  console.log(kepler.hungry);
   //     __
   //    / /_  __  ______ ___  ____ _____  _____
   //   / __ \/ / / / __ `__ \/ __ `/ __ \/ ___/
@@ -97,7 +101,6 @@
   var faith = new Human({
     cool: true
   });
-
 
   //                     __           __  __    _                             __
   //    ____ ___  ____ _/ /_____     / /_/ /_  (_)____   _      ______  _____/ /__
